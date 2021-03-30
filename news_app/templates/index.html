@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,32 +12,8 @@
     <title>Home Page</title>
 </head>
 <body>
-   <h1>Home Page</h1>
+   <h1>Welcome to Home Page</h1>
 
-{#    <div>#}
-{#       {% for n in my_news %}#}
-{#           <h5>category: {{ n.category }}</h5>#}
-{#            <h3>{{ n.title }}</h3>#}
-{#            <h3>{{ n.content }}</h3>#}
-{#         <img src="/media/{{ n.image }}" alt="No stuff"/>#}
-{#            <img src="/media/football.jpg" alt="No stuff"/>#}
-{#        {% endfor %}#}
-{#    </div>#}
-
-
-<div class="card" style="width: 18rem;">
-    {% for n in my_news %}
-  <img src="/media/{{ n.image }}" class="card-img-top" alt="No stuff">
-  <div class="card-body">
-    <h5 class="card-title">{{ n.title }}</h5>
-    <p class="card-text">{{ n.content }}</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Category: {{ n.category }}</li>
-  </ul>
-    <br/>
-      {% endfor %}
-  </div>
-</div>
 </body>
 </html>
+{% endblock %}
