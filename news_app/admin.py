@@ -10,7 +10,7 @@ class AdminNews(admin.ModelAdmin):
 
 
 class AdminComments(admin.ModelAdmin):
-    list_display = ('news', 'email', 'comment')
+    list_display = ('news', 'comment')
 
 
 admin.site.register(News, AdminNews)
