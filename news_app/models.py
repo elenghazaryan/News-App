@@ -92,16 +92,6 @@ class Comment(models.Model):
     # for replies
     parent_field = models.ForeignKey("self", null=True, blank=True, related_name='parents', on_delete=models.CASCADE)
 
-    # class Meta:
-    #     ordering = ['-timestamp']
-
     def __str__(self):
         return self.comment
 
-    def children(self):
-        return Comment.objects.filter(parent=self)
-
-    def is_parent(self):
-        if self.parent_field is not None:
-            return False
-        return True

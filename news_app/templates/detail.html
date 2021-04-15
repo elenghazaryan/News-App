@@ -15,18 +15,18 @@
             {% endfor %}
             <form method="post" action="/detail/{{ news.id }}">
                 {% csrf_token %}
-{#                <div class="form-group row">#}
-{#                    <label class="col-md-2">Name<span class="text-danger">*</span></label>#}
-{#                    <div class="col-md-10">#}
-{#                        <input type="text" name="name" required class="form-control"/>#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div class="form-group row">#}
-{#                    <label class="col-md-2">Email<span class="text-danger">*</span></label>#}
-{#                    <div class="col-md-10">#}
-{#                        <input type="temailext" name="email" required class="form-control"/>#}
-{#                    </div>#}
-{#                </div>#}
+                {#                <div class="form-group row">#}
+                {#                    <label class="col-md-2">Name<span class="text-danger">*</span></label>#}
+                {#                    <div class="col-md-10">#}
+                {#                        <input type="text" name="name" required class="form-control"/>#}
+                {#                    </div>#}
+                {#                </div>#}
+                {#                <div class="form-group row">#}
+                {#                    <label class="col-md-2">Email<span class="text-danger">*</span></label>#}
+                {#                    <div class="col-md-10">#}
+                {#                        <input type="temailext" name="email" required class="form-control"/>#}
+                {#                    </div>#}
+                {#                </div>#}
                 <div class="form-group row">
                     <label class="col-md-2">Comment<span class="text-danger">*</span></label>
                     <div class="col-md-10">
@@ -51,6 +51,23 @@
                             title="Source Title">{{ comment.user.email }}</cite></footer>
                 </blockquote>
                 <hr/>
+
+                <div class="replied-comments container mt-2">
+                    <div class="form-group row">
+                        <form method="post" action="/detail/{{ news.id }}">
+                            {% csrf_token %}
+                            <div class="form-group row">
+                                <label class="col-md-2">Reply<span class="text-danger">*</span></label>
+                                <div class="col-md-10">
+                                    <textarea class="form-control" name="message" required></textarea>
+                                </div>
+                            </div>
+                            <input type="submit" class="btn btn-primary"/>
+                        </form>
+                    </div>
+                </div>
+
+
             {% endfor %}
         </div>
     </div>
